@@ -1,0 +1,22 @@
+MARS EXPLORER
+
+Description:
+You work with remote controlled Mars exploration drone, its tasks to find water, organics or any strange and unexpected things on surface of Mars.
+You can control movement direction and what things around drone must be scanned for chemical composition, physical properties or any anomalies.
+
+Target technologies:
+JSP, Servlet API, Spring MVC or any analogues (results over tools)
+
+Goal:
+Learn target technologies on simple joke-like project about hypothetical
+
+Requirements & Restrictions (givens):
+- you explore limited part of surface divided to equal squares
+- you can use "move?directionName" command to switch position to next square in one of 4 directions: west, east, north, south
+- surface generates randomly, it has different relief and some squares could be inaccessible for your drone
+- you automatically receive list of interesting things around drone on current square (places of interest)
+- you can use command "scan?placeOfInterest" to scan something on surface around drone
+- your goal to get N traces of water, organics or unknown technology (condition of end)
+- all interactions you doing with web browser
+- application must react some adequate way on your actions and show parametrized text pages
+- you free in additional features, messages texts and any additional technologies (but KISS and DRY)
