@@ -1,0 +1,14 @@
+{
+  "stone":
+  {
+    "name": "stone",
+    "type": "M",
+    "description": "piece of martian rocks"
+  },
+  "strange_stone":
+  {
+    "name": "shiny stone",
+    "type": "A",
+    "description": "well-polished ideal elliptic stone with strange symbols"
+  }
+}
