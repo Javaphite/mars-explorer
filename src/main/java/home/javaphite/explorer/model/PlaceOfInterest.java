@@ -1,4 +1,4 @@
-package home.javaphite.explorer;
+package home.javaphite.explorer.model;
 
 public class PlaceOfInterest {
     private final int id = (int) Math.abs(super.hashCode()/111119);

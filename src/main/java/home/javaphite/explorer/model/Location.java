@@ -1,4 +1,4 @@
-package home.javaphite.explorer;
+package home.javaphite.explorer.model;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
