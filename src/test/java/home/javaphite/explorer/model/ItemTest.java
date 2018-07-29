@@ -1,5 +1,6 @@
-package home.javaphite.explorer;
+package home.javaphite.explorer.model;
 
+import home.javaphite.explorer.model.Item;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
