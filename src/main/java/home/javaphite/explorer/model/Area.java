@@ -1,11 +1,12 @@
 package home.javaphite.explorer.model;
 
+//TODO: rework on composite locations
 public class Area {
     private Location[][] locations;
     private int xCurrentPos;
     private int yCurrentPos;
 
-    Area(int height, int width) {
+    public Area(int height, int width) {
         locations = new Location[height][width];
         for (int x = 0; x < height; x++) {
             for (int y = 0; y < width; y++) {
@@ -30,9 +31,9 @@ public class Area {
     }
 
     private void setPosition(int xPos, int yPos) {
-        int xMax = locations.length;
-        int yMax = locations[0].length;
-        xCurrentPos = (xPos > xMax)? xMax: xPos;
-        yCurrentPos = (yPos > yMax)? yMax: yPos;
+        int xMax = locations.length-1;
+        int yMax = locations[0].length-1;
+        xCurrentPos = (xPos > xMax) ? xMax : xPos;
+        yCurrentPos = (yPos > yMax) ? yMax : yPos;
     }
 }
