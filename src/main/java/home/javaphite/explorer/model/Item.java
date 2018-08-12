@@ -11,7 +11,7 @@ enum Item {
     STONE("stone"),
     STRANGE_STONE("strange_stone");
 
-    static final String DESCRIPTIONS_FILE = "/item_descriptions.json";
+    static final String DESCRIPTIONS_FILE = "/descriptions/item_descriptions.json";
 
     enum Type {
         WATER_PRESENCE_PROOF,
@@ -27,7 +27,7 @@ enum Item {
     Item(String descriptionId) {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode fields;
-        try (InputStream inStream = String.class.getResourceAsStream(DESCRIPTIONS_FILE)) {
+        try (InputStream inStream = getClass().getResourceAsStream(DESCRIPTIONS_FILE)) {
             fields = mapper.readTree(inStream).findValue(descriptionId);
         }
         catch (IOException treeReadingError) {
