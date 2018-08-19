@@ -13,13 +13,6 @@ enum Item {
 
     static final String DESCRIPTIONS_FILE = "/descriptions/item_descriptions.json";
 
-    enum Type {
-        WATER_PRESENCE_PROOF,
-        ORGANIC_PRESENCE_PROOF,
-        ALIEN_TECHNOLOGY,
-        MISCELLANEOUS
-    }
-
     private String name;
     private Type type;
     private String description;
@@ -34,16 +27,34 @@ enum Item {
             throw new UncheckedIOException(treeReadingError);
         }
         name = fields.get("name").asText();
-        type = mapType(fields.get("type").asText());
+        type = Type.mapType(fields.get("type").asText());
         description = fields.get("description").asText();
     }
 
-    private Type mapType(String typeTag) {
-        switch (typeTag) {
-            case "W": return Type.WATER_PRESENCE_PROOF;
-            case "O": return Type.ORGANIC_PRESENCE_PROOF;
-            case "A": return Type.ALIEN_TECHNOLOGY;
-            default: return Type.MISCELLANEOUS;
+    enum Type {
+        WATER_PRESENCE_PROOF("water presence proof"),
+        ORGANIC_PRESENCE_PROOF("organic presence proof"),
+        ALIEN_TECHNOLOGY("alien technology trace"),
+        MISCELLANEOUS("useless trash");
+
+        private final String description;
+
+        Type(String description) {
+            this.description = description;
+        }
+
+        static Type mapType(String typeTag) {
+            switch (typeTag) {
+                case "W": return Type.WATER_PRESENCE_PROOF;
+                case "O": return Type.ORGANIC_PRESENCE_PROOF;
+                case "A": return Type.ALIEN_TECHNOLOGY;
+                default: return Type.MISCELLANEOUS;
+            }
+        }
+
+        @Override
+        public String toString() {
+            return description;
         }
     }
 
