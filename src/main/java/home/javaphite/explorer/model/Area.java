@@ -1,6 +1,5 @@
 package home.javaphite.explorer.model;
 
-//TODO: rework on composite locations
 public class Area {
     private Location[][] locations;
     private int xCurrentPos, yCurrentPos;

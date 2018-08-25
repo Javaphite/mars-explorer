@@ -1,7 +1,6 @@
 package home.javaphite.explorer.model;
 
 import home.javaphite.explorer.utils.TestLifecycleLogger;
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
