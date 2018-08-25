@@ -7,6 +7,6 @@
       <h1>LOCATION</h1>
       ${currentLocation}
       <hr><p>
-      ${currentLocationPoisStatuses}
+      ${details}
    </body>
 </html>

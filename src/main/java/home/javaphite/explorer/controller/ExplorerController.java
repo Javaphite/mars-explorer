@@ -27,7 +27,7 @@ public class ExplorerController {
         ModelAndView modelAndView = new ModelAndView("location");
         Location currentLocation = area.getCurrentLocation();
         modelAndView.addObject("currentLocation", currentLocation.toString())
-                    .addObject("currentLocationPoisStatuses", convertLineSeparatorsToHtml(currentLocation.getPoisStatuses()));
+                    .addObject("details", convertLineSeparatorsToHtml(currentLocation.details()));
         return modelAndView;
     }
 
@@ -40,7 +40,7 @@ public class ExplorerController {
     @GetMapping("/explorer/location/scan")
     public String scanPlaceOfIneterestById(int id) {
         Location currentLocation = area.getCurrentLocation();
-        PlaceOfInterest poi = currentLocation.pois.get(id);
+        PlaceOfInterest poi = currentLocation.placesOfInterest.get(id);
         poi.setScanned(true);
         return "redirect:/explorer/location/";
     }
