@@ -3,14 +3,13 @@ package home.javaphite.explorer.model;
 //TODO: rework on composite locations
 public class Area {
     private Location[][] locations;
-    private int xCurrentPos;
-    private int yCurrentPos;
+    private int xCurrentPos, yCurrentPos;
 
     public Area(int height, int width) {
         locations = new Location[height][width];
         for (int x = 0; x < height; x++) {
             for (int y = 0; y < width; y++) {
-                locations[x][y] = new Location();
+                locations[x][y] = Location.randomized();
             }
         }
     }
