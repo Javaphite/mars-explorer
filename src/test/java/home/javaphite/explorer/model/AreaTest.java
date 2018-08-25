@@ -1,15 +1,22 @@
 package home.javaphite.explorer.model;
 
+import home.javaphite.explorer.utils.TestLifecycleLogger;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class AreaTest {
+@DisplayName("Area class")
+public class AreaTest extends TestLifecycleLogger {
+
     @Test
+    @Tag("constructor")
     void areaInitializationSuccess() {
-        Area area = new Area(2,1);
+        Area area = new Area(2,2);
+
         Assertions.assertNotNull(area.getCurrentLocation());
         area.move("south");
         Assertions.assertNotNull(area.getCurrentLocation());
     }
-
 }
