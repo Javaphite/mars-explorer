@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import java.util.Objects;
+
 @Controller
 @EnableWebMvc
 @EnableAutoConfiguration
@@ -22,7 +24,7 @@ public class ExplorerController {
         return "redirect:/explorer/location/";
     }
 
-    @GetMapping("/explorer/location*")
+    @GetMapping("/explorer/location")
     public ModelAndView getLocation() {
         ModelAndView modelAndView = new ModelAndView("location");
         Location currentLocation = area.getCurrentLocation();
@@ -41,13 +43,12 @@ public class ExplorerController {
     public String scanPlaceOfIneterestById(int id) {
         Location currentLocation = area.getCurrentLocation();
         PlaceOfInterest poi = currentLocation.placesOfInterest.get(id);
-        poi.setScanned(true);
+        if (Objects.nonNull(poi)) {
+            poi.setScanned(true);
+        } else {
+            throw new IllegalArgumentException("There is no object with such ID! Scanning aborted. Awaiting new orders!");
+        }
         return "redirect:/explorer/location/";
-    }
-
-    @GetMapping("/final")
-    public ModelAndView finalView() {
-        return new ModelAndView("final");
     }
 
     private String convertLineSeparatorsToHtml(String text) {
