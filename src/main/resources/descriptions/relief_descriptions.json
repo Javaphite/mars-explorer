@@ -1,6 +1,6 @@
 {
   "rocks":
   {
-    "description_template": "Rocks, rocks, f*ing red martian rocks everywhere! Only objects {} and {} differ this location from other ones..."
+    "description_template": "Rocks, rocks, red martian rocks everywhere! Only objects {} and {} differ this location from other ones..."
   }
 }
