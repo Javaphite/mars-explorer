@@ -3,6 +3,7 @@ package home.javaphite.explorer.controller;
 import home.javaphite.explorer.model.Area;
 import home.javaphite.explorer.model.Location;
 import home.javaphite.explorer.model.PlaceOfInterest;
+import home.javaphite.explorer.model.exceptions.UnknownObjectIdException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
@@ -46,7 +47,7 @@ public class ExplorerController {
         if (Objects.nonNull(poi)) {
             poi.setScanned(true);
         } else {
-            throw new IllegalArgumentException("There is no object with such ID! Scanning aborted. Awaiting new orders!");
+            throw new UnknownObjectIdException("Warning: no object with such ID found! Scanning command aborted. Awaiting new one...");
         }
         return "redirect:/explorer/location/";
     }

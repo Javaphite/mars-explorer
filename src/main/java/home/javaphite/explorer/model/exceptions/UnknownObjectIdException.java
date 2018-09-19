@@ -6,4 +6,8 @@ public class UnknownObjectIdException extends IllegalArgumentException {
         super(errorMessage, cause);
     }
 
+    public UnknownObjectIdException(String errorMessage) {
+        super(errorMessage);
+    }
+
 }

@@ -6,5 +6,6 @@
 
    <body>
       <h1>ERROR</h1>
+      ${errorMessage}
    </body>
 </html>
