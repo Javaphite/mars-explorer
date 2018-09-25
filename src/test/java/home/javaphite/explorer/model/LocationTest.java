@@ -4,6 +4,7 @@ import home.javaphite.explorer.utils.TestLifecycleLogger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 
 @DisplayName("Location class")
 public class LocationTest extends TestLifecycleLogger {
@@ -15,4 +16,5 @@ public class LocationTest extends TestLifecycleLogger {
         Location loc = Location.randomized();
         System.out.println(loc);
     }
+
 }
