@@ -1,0 +1,50 @@
+
+/* Base grid config and text formats */
+
+body {
+    position: absolute;
+    box-sizing: border-box;
+    font-family: "Courier", Courier, monospace;
+    font-size: 1.6vw;
+    right: 10vw;
+    left: 10vw;
+}
+
+h1 {
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+}
+
+.grid-description {
+    grid-area: description;
+}
+
+.grid-details {
+    grid-area: details;
+
+}
+
+.grid-image {
+    grid-area: image;
+}
+
+.grid-image > img {
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'description image'
+        'details image';
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 40% 60%;
+    grid-gap: 0;
+ }

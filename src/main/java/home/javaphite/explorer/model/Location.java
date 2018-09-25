@@ -83,7 +83,7 @@ public class Location {
 
         ROCKS("rocks");
 
-        static final String DESCRIPTION_TEMPLATES_PATH = "/descriptions/relief_descriptions.json";
+        static final String DESCRIPTION_TEMPLATES_PATH = "/public/descriptions/relief_descriptions.json";
         static final Pattern PLACEHOLDER_PATTERN = Pattern.compile("[{]}");
 
         private final String description;

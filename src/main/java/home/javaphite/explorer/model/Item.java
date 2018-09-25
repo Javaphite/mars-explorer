@@ -11,7 +11,7 @@ enum Item {
     STONE("stone"),
     STRANGE_STONE("strange_stone");
 
-    static final String DESCRIPTIONS_FILE = "/descriptions/item_descriptions.json";
+    static final String DESCRIPTIONS_FILE = "/public/descriptions/item_descriptions.json";
 
     private String name;
     private Type type;
