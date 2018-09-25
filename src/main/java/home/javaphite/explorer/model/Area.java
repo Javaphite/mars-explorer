@@ -26,7 +26,7 @@ public class Area {
             case "north": setPosition(xCurrentPos-1, yCurrentPos); break;
             case "south": setPosition(xCurrentPos+1, yCurrentPos); break;
             default:
-                throw new InvalidDirectionNameException("Warning: unknown direction! Awaiting new commands...");
+                throw new InvalidDirectionNameException("Unknown direction! Awaiting new commands...");
         }
         return getCurrentLocation();
     }
@@ -36,7 +36,7 @@ public class Area {
         int yMax = locations[0].length-1;
 
         if ((xPos > xMax) || (yPos > yMax)) {
-            throw new ArrayIndexOutOfBoundsException("Warning: you tried to leave exploration area! Movement command aborted. Awaiting new one...");
+            throw new ArrayIndexOutOfBoundsException("You leaving exploration area! Movement command aborted. Awaiting new one...");
         } else {
             xCurrentPos = xPos;
             yCurrentPos = yPos;
